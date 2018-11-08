@@ -20,13 +20,20 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f7-kD-EdL">
                                 <rect key="frame" x="93" y="36" width="189" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Upcoming Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S65-Bl-rtT">
+                                <rect key="frame" x="71" y="327" width="233" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.77231398060135703" green="0.97061495529307718" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="1f7-kD-EdL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="6TT-1z-2Xp"/>
+                            <constraint firstItem="S65-Bl-rtT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bn0-Pw-m4I"/>
+                            <constraint firstItem="S65-Bl-rtT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Bwn-QL-hkw"/>
                             <constraint firstItem="1f7-kD-EdL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bcX-h5-fRo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
