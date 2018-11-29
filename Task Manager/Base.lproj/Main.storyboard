@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Task-->
         <scene sceneID="MfF-84-dKA">
             <objects>
-                <viewController id="fmJ-Mt-29J" sceneMemberID="viewController">
+                <viewController id="fmJ-Mt-29J" customClass="AddTask" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8s-Kt-Zws">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Save Task"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="dpS-US-QC7"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="saveTaskSegue" id="112-vn-ihr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3X7-9K-cvg">
@@ -56,7 +56,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="TP2-Wo-dOx"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="eAj-zo-Qt7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,6 +81,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sMm-Bf-aZl"/>
                     </view>
+                    <connections>
+                        <outlet property="taskName" destination="ipj-j3-wOi" id="gzO-Eo-1W6"/>
+                        <outlet property="taskTime" destination="ctl-I1-I3M" id="jyF-WC-m9P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77e-ww-QYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,8 +98,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Today's Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f7-kD-EdL">
-                                <rect key="frame" x="42" y="36" width="199" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f7-kD-EdL">
+                                <rect key="frame" x="30" y="30" width="189" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -137,18 +141,16 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-3g-qOK">
-                                <rect key="frame" x="239" y="38" width="60" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-3g-qOK">
+                                <rect key="frame" x="239" y="30" width="60" height="38"/>
                                 <color key="backgroundColor" red="0.2809110501" green="1" blue="0.2716752603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6M-dD-gOI">
-                                <rect key="frame" x="307" y="40" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6M-dD-gOI">
+                                <rect key="frame" x="307" y="30" width="30" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
@@ -158,15 +160,27 @@
                         </subviews>
                         <color key="backgroundColor" red="0.77231398060135703" green="0.97061495529307718" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="I6M-dD-gOI" firstAttribute="leading" secondItem="kj2-3g-qOK" secondAttribute="trailing" constant="10" id="27f-O1-Aqh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhb-Pv-aoi" secondAttribute="trailing" constant="50" id="9U7-4n-rRv"/>
+                            <constraint firstItem="kj2-3g-qOK" firstAttribute="leading" secondItem="1f7-kD-EdL" secondAttribute="trailing" constant="10" id="Fpc-Yt-AeC"/>
                             <constraint firstItem="bhb-Pv-aoi" firstAttribute="top" secondItem="1f7-kD-EdL" secondAttribute="bottom" constant="2" id="GCZ-HW-uz3"/>
+                            <constraint firstItem="1f7-kD-EdL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Hbz-dI-Ooh"/>
+                            <constraint firstItem="I6M-dD-gOI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="JsQ-K8-zju"/>
+                            <constraint firstItem="1f7-kD-EdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="KC4-wA-O3P"/>
+                            <constraint firstItem="kj2-3g-qOK" firstAttribute="leading" secondItem="1f7-kD-EdL" secondAttribute="trailing" constant="10" id="Mji-GQ-wqP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bhb-Pv-aoi" secondAttribute="bottom" constant="50" id="d84-mW-UY8"/>
-                            <constraint firstItem="1f7-kD-EdL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="dqh-GU-1F2"/>
                             <constraint firstItem="bhb-Pv-aoi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="en7-wL-Z8X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I6M-dD-gOI" secondAttribute="trailing" constant="10" id="euC-Gi-j3Y"/>
                             <constraint firstItem="bhb-Pv-aoi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="hUh-7c-wc3"/>
+                            <constraint firstItem="kj2-3g-qOK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="j3c-8d-rex"/>
+                            <constraint firstItem="I6M-dD-gOI" firstAttribute="leading" secondItem="kj2-3g-qOK" secondAttribute="trailing" constant="10" id="jLq-Fi-8SV"/>
+                            <constraint firstItem="I6M-dD-gOI" firstAttribute="leading" secondItem="kj2-3g-qOK" secondAttribute="trailing" constant="10" id="oyd-1O-urp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="taskTable" destination="bhb-Pv-aoi" id="SwS-51-Zy2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,6 +191,6 @@
         <image name="checkBoxEmpty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TP2-Wo-dOx"/>
+        <segue reference="eAj-zo-Qt7"/>
     </inferredMetricsTieBreakers>
 </document>
