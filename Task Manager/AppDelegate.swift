@@ -16,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UserDefaults.standard.array(forKey: "dailytasks")
+        //testing
+        let tasks = UserDefaults.standard.array(forKey: "dailytasks") ?? []
+        UserDefaults.standard.set(tasks, forKey: "dailytasks")
+        
         return true
     }
 
