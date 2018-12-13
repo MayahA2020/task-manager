@@ -17,6 +17,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func testerPrintArray(_ sender: Any) {
+        print("")
+        print(UserDefaults.standard.array(forKey: "dailytasks")?.count)
+        print(UserDefaults.standard.array(forKey: "dailytasks"))
+    }
+    
     /*override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
