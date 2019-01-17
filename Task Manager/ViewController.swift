@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let task = AddTask.DailyTask.init(propertyList: self.tasksProp[indexPath.row])
         cell.taskNameLabel.text = task.name
         cell.timeLeftLabel.text = String(task.time)
+        cell.timeLeft = task.time
+        cell.timeformat()
         if task.taskCompleted {
             cell.progressButton.setBackgroundImage(UIImage(named: "checkBox"), for: UIControl.State.normal)
         } else {

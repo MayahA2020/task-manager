@@ -25,9 +25,21 @@ class defaultCell: UITableViewCell {
         self.buttonImage = buttonImage
         self.color = color
         super.init(coder: nsCoder)!
+        timeformat()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
+    
+    func timeformat() {
+        let minutes = Int(timeLeft) / 60 % 60
+        print(timeLeft)
+        print(minutes)
+        let hours = Int(minutes / (60 * 60)) % 60
+        timeLeftLabel.text = "\(hours): \(minutes)"
+    }
+
 }
+
+

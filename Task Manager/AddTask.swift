@@ -47,7 +47,7 @@ class AddTask: UIViewController {
         let name = taskName.text
         let time = taskTime.countDownDuration
         let newTask = DailyTask.init(name: name!, time: time, taskCompleted: false)
-        
+        print(taskTime)
         // Convert object to property list
         let newTaskProp = newTask.propertyListMethod()
         
@@ -64,7 +64,6 @@ class AddTask: UIViewController {
         print("Old List: \(tasks)")
         return true
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
