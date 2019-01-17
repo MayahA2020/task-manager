@@ -47,32 +47,21 @@ class AddTask: UIViewController {
         let name = taskName.text
         let time = taskTime.countDownDuration
         let newTask = DailyTask.init(name: name!, time: time, taskCompleted: false)
-        print("regular form: \(newTask)")
+        
         // Convert object to property list
         let newTaskProp = newTask.propertyListMethod()
-        print("Property list form: \(newTaskProp)")
+        
         // Fetch existing tasks
         var oldList = UserDefaults.standard.array(forKey: "dailytasks") as? [[String: Any]]
         if oldList!.count == 0 {
             UserDefaults.standard.set([newTaskProp], forKey: "dailytasks")
-            print("in the if statement")
         } else {
             oldList!.append(newTaskProp)
             UserDefaults.standard.set(oldList, forKey: "dailytasks")
-            print("in the else statement")
         }
+        
         var tasks = UserDefaults.standard.array(forKey: "dailytasks") as? [[String: Any]]
         print("Old List: \(tasks)")
-        // Add property list to that list
-        
-        // Store the updated list
-
-        //oldList.append(newTask.propertyListMethod())
-        UserDefaults.standard.set(dailyTasks, forKey: "dailytasks")
-        /*print(UserDefaults.standard.array(forKey: "dailytasks")?.count)
-        print(UserDefaults.standard.array(forKey: "dailytasks"))
-        print(dailyTasks)
-        print("")*/
         return true
     }
     

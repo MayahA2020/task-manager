@@ -14,6 +14,7 @@
 		D243638F2194E5F4000FA4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D243638D2194E5F4000FA4BB /* LaunchScreen.storyboard */; };
 		D243639A2194E5F4000FA4BB /* Task_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24363992194E5F4000FA4BB /* Task_ManagerTests.swift */; };
 		D24363A52194E5F4000FA4BB /* Task_ManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24363A42194E5F4000FA4BB /* Task_ManagerUITests.swift */; };
+		D295DCD221CC4D3500276E11 /* defaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D295DCD121CC4D3500276E11 /* defaultCell.swift */; };
 		D2B78CE721B09A13006D9D65 /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B78CE621B09A13006D9D65 /* AddTask.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		D24363A02194E5F4000FA4BB /* Task ManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Task ManagerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24363A42194E5F4000FA4BB /* Task_ManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task_ManagerUITests.swift; sourceTree = "<group>"; };
 		D24363A62194E5F4000FA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D295DCD121CC4D3500276E11 /* defaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultCell.swift; sourceTree = "<group>"; };
 		D2B78CE621B09A13006D9D65 /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				D24363842194E5F3000FA4BB /* AppDelegate.swift */,
 				D24363862194E5F3000FA4BB /* ViewController.swift */,
 				D24363882194E5F3000FA4BB /* Main.storyboard */,
+				D295DCD121CC4D3500276E11 /* defaultCell.swift */,
 				D243638B2194E5F4000FA4BB /* Assets.xcassets */,
 				D243638D2194E5F4000FA4BB /* LaunchScreen.storyboard */,
 				D24363902194E5F4000FA4BB /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D24363872194E5F3000FA4BB /* ViewController.swift in Sources */,
+				D295DCD221CC4D3500276E11 /* defaultCell.swift in Sources */,
 				D24363852194E5F3000FA4BB /* AppDelegate.swift in Sources */,
 				D2B78CE721B09A13006D9D65 /* AddTask.swift in Sources */,
 			);
