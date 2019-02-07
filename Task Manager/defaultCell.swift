@@ -35,7 +35,7 @@ class defaultCell: UITableViewCell {
     func timeformat() -> String {
         let seconds = Int(timeLeft) % 60
         let minutes = Int(timeLeft) / 60 % 60
-        let hours = Int(minutes / (60 * 60)) % 60
+        let hours = Int(timeLeft) / (60 * 60) % 60
         print(String(format:"%02i:%02i:%02i", hours, minutes, seconds))
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
        

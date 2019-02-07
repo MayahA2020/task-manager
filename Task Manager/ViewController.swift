@@ -19,8 +19,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell: defaultCell = self.taskTable.dequeueReusableCell(withIdentifier: "defaultCell") as! defaultCell!
         let task = AddTask.DailyTask.init(propertyList: self.tasksProp[indexPath.row])
         cell.taskNameLabel.text = task.name
-        cell.timeLeftLabel.text = String(task.time)
         cell.timeLeft = task.time
+        cell.timeLeftLabel.text = cell.timeformat()
+        
         if task.taskCompleted {
             cell.progressButton.setBackgroundImage(UIImage(named: "checkBox"), for: UIControl.State.normal)
         } else {
