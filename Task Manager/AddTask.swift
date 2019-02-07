@@ -41,7 +41,7 @@ class AddTask: UIViewController {
     }
     
     var dailyTasks: [[String: Any]] = []
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         // Create a task object
         let name = taskName.text
